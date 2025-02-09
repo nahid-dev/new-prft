@@ -23,7 +23,7 @@ const MainHeading = () => {
         </HeadingButton>
       </div>
       <div>
-        <p>turning your ideas into pixel perfect realties</p>
+        <p>building scalable and high-performance applications</p>
       </div>
     </h1>
   );
