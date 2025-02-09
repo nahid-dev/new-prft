@@ -51,6 +51,7 @@ const ProfileCard = () => {
           alt="Person Image"
           width={300}
           height={300}
+          loading="lazy"
           className="size-[70px] rounded-full object-cover"
         />
       </div>

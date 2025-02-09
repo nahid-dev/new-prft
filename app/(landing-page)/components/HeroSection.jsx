@@ -1,3 +1,4 @@
+"use client";
 import ProfileCard from "@/components/shared/common/ProfileCard";
 import SubTag from "@/components/shared/common/SubTag";
 import Container from "@/components/shared/Container";
@@ -5,12 +6,14 @@ import Image from "next/image";
 import React from "react";
 import MainHeading from "./MainHeading";
 import HighlightButton from "@/components/shared/common/HighlightButton";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const HeroSection = () => {
   return (
-    <div className="py-20">
+    <div className="py-20 relative">
+      <BackgroundBeams className="absolute inset-0 z-0" />
       <Container>
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-3 relative z-10">
           {/* LEFT SIDE - PROFILE SECTION */}
           <div className="col-span-3 lg:col-span-1">
             <ProfileCard />
@@ -36,6 +39,7 @@ const HeroSection = () => {
           </div>
         </div>
       </Container>
+      {/* <BackgroundBeams /> */}
     </div>
   );
 };
