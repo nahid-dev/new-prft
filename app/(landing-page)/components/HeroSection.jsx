@@ -3,12 +3,19 @@ import ProfileCard from "@/components/shared/common/ProfileCard";
 import SubTag from "@/components/shared/common/SubTag";
 import Container from "@/components/shared/Container";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import MainHeading from "./MainHeading";
 import HighlightButton from "@/components/shared/common/HighlightButton";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import Modal from "@/components/modal/Modal";
+import ResumeViewModal from "@/components/ResumeViewModal";
 
 const HeroSection = () => {
+  const [isOpenResumeModal, setIsOpenResumeModal] = useState(false);
+  const handleOpenResumeModal = () => {
+    console.log("click");
+    setIsOpenResumeModal((prev) => !prev);
+  };
   return (
     <div className="py-20 relative">
       <BackgroundBeams className="absolute inset-0 z-0" />
@@ -34,12 +41,18 @@ const HeroSection = () => {
               results.
             </p>
             <div>
-              <HighlightButton>View my resume</HighlightButton>
+              <HighlightButton onClick={handleOpenResumeModal}>
+                View my resume
+              </HighlightButton>
             </div>
           </div>
         </div>
       </Container>
-      {/* <BackgroundBeams /> */}
+
+      {/* RESUME MODAL */}
+      <Modal open={isOpenResumeModal} setOpen={setIsOpenResumeModal}>
+        <ResumeViewModal setIsOpenResumeModal={setIsOpenResumeModal} />
+      </Modal>
     </div>
   );
 };
