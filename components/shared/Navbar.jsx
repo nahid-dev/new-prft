@@ -23,7 +23,7 @@ const Navbar = () => {
   const [isMenuToggle, setIsMenuToggle] = useState(false);
 
   return (
-    <nav className="bg-transparent border-b fixed w-full top-0">
+    <nav className="bg-transparent border-b fixed w-full top-0 z-50">
       {/* TOP NAVBAR */}
       <div className="px-6 md:px-10 py-4 md:py-8 flex items-center justify-between bg-white md:bg-transparent">
         {/* LEFT PART (LOGO) */}

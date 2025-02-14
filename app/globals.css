@@ -84,3 +84,19 @@ body {
     @apply bg-background text-foreground;
     }
 }
+.masked-div {
+  @apply w-full h-24 bg-[#1c1c1c];
+
+  /* Applying the mask */
+  -webkit-mask-image: linear-gradient(to right,
+      rgba(28, 28, 28, 0) 0%,
+      /* Use #1c1c1c with transparency */
+      rgb(28, 28, 28) 12.5%,
+      rgb(28, 28, 28) 87.5%,
+      rgba(28, 28, 28, 0) 100%);
+  mask-image: linear-gradient(to right,
+      rgba(28, 28, 28, 0) 0%,
+      rgb(28, 28, 28) 12.5%,
+      rgb(28, 28, 28) 87.5%,
+      rgba(28, 28, 28, 0) 100%);
+}

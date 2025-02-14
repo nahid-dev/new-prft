@@ -2,7 +2,6 @@
 import ProfileCard from "@/components/shared/common/ProfileCard";
 import SubTag from "@/components/shared/common/SubTag";
 import Container from "@/components/shared/Container";
-import Image from "next/image";
 import React, { useState } from "react";
 import MainHeading from "./MainHeading";
 import HighlightButton from "@/components/shared/common/HighlightButton";
@@ -13,7 +12,6 @@ import ResumeViewModal from "@/components/ResumeViewModal";
 const HeroSection = () => {
   const [isOpenResumeModal, setIsOpenResumeModal] = useState(false);
   const handleOpenResumeModal = () => {
-    console.log("click");
     setIsOpenResumeModal((prev) => !prev);
   };
   return (
@@ -22,7 +20,7 @@ const HeroSection = () => {
       <Container>
         <div className="grid grid-cols-3 relative z-10">
           {/* LEFT SIDE - PROFILE SECTION */}
-          <div className="col-span-3 lg:col-span-1">
+          <div className="col-span-3 lg:col-span-1 pt-10">
             <ProfileCard />
           </div>
           {/* RIGHT SIDE - HERO HEADING SECTION */}
