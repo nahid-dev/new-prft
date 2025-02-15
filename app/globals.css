@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-    --secondary-color: #111111;
+    --dark: #111111;
     --highlight-color: #8cff2e;
 }
 
@@ -30,8 +30,8 @@ body {
         --popover-foreground: 222.2 84% 4.9%;
         --primary: 222.2 47.4% 11.2%;
         --primary-foreground: 210 40% 98%;
-        --secondary: 210 40% 96.1%;
-        --secondary-foreground: 222.2 47.4% 11.2%;
+        --secondary: #111111;
+          --secondary-foreground: 0 0% 100%;
         --muted: 210 40% 96.1%;
         --muted-foreground: 215.4 16.3% 46.9%;
         --accent: 210 40% 96.1%;
@@ -85,7 +85,7 @@ body {
     }
 }
 .masked-div {
-  @apply w-full h-24 bg-[#1c1c1c];
+  @apply w-full h-20 bg-[#1c1c1c];
 
   /* Applying the mask */
   -webkit-mask-image: linear-gradient(to right,
@@ -99,4 +99,12 @@ body {
       rgb(28, 28, 28) 12.5%,
       rgb(28, 28, 28) 87.5%,
       rgba(28, 28, 28, 0) 100%);
+}
+.hover-effect {
+  box-shadow: rgba(132, 255, 31, 0.32) 0px 12px 40px 0px;
+  transition: all .3s;
+}
+
+.hover-effect:hover {
+  box-shadow: none;
 }
