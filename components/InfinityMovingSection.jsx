@@ -9,11 +9,12 @@ const skills = [
   { id: 3, image: "/skills/github.png", name: "GitHub" },
   { id: 4, image: "/skills/html-5.png", name: "HTML" },
   { id: 5, image: "/skills/javascript.png", name: "JavaScript" },
-  { id: 6, image: "/skills/mongo-db.png", name: "MongoDB" },
-  { id: 7, image: "/skills/node-js.png", name: "Node.js" },
-  { id: 8, image: "/skills/react.png", name: "React.js" },
-  { id: 9, image: "/skills/redux.png", name: "Redux" },
-  { id: 10, image: "/skills/tailwind-css.png", name: "TailwindCSS" },
+  { id: 6, image: "/skills/next-js.svg", name: "Next.js" },
+  { id: 7, image: "/skills/mongo-db.png", name: "MongoDB" },
+  { id: 8, image: "/skills/node-js.png", name: "Node.js" },
+  { id: 9, image: "/skills/react.png", name: "React.js" },
+  { id: 10, image: "/skills/redux.png", name: "Redux" },
+  { id: 11, image: "/skills/tailwind-css.png", name: "TailwindCSS" },
 ];
 
 const InfinityMovingSection = () => {
