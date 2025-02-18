@@ -89,7 +89,7 @@ const ProjectSection = () => {
             transition={{ duration: 0.3 }}
             className="bg-highlight text-gray-800 font-semibold text-xl  h-full flex items-center justify-center rounded-xl"
           >
-            <motion.div className="flex items-center gap-4 group-hover:gap-2 transition-all duration-300">
+            <motion.div className="flex items-center gap-4 group-hover:gap-2 transition-all duration-100">
               <p>View all projects</p>
               <p className="bg-foreground text-white p-2 rounded-full">
                 <ArrowUp className="rotate-45 size-6 group-hover:rotate-90 transition duration-300" />
