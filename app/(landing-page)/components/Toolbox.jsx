@@ -1,6 +1,4 @@
 "use client";
-import { motion, useScroll } from "framer-motion";
-import { useRef } from "react";
 import Tool from "./Tool";
 import SectionHeaderTag from "@/components/SectionHeaderTag";
 import Container from "@/components/shared/Container";
@@ -51,26 +49,25 @@ const skills = [
 ];
 
 export default function ToolBox() {
-
   return (
-    <div className="py-36">
+    <div className="py-28">
       <Container>
-        <div
-          className="grid grid-cols-1 xl:grid-cols-2 gap-28"
-        >
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-28">
           <div className="ml-10">
-            <SectionHeaderTag title="{02} — Tools & Skills" className="justify-center xl:justify-end" />
-            <h2 className="text-[50px] xl:text-[90px] text-center xl:text-right leading-tight">My Creative Toolbox</h2>
+            <div className="sticky top-36">
+              <SectionHeaderTag
+                title="{02} — Tools & Skills"
+                className="justify-center xl:justify-end"
+              />
+              <h2 className="text-[50px] xl:text-[90px] text-center xl:text-right leading-tight">
+                My Creative Toolbox
+              </h2>
+            </div>
           </div>
 
           <div className="flex flex-col gap-y-8 w-full">
             {skills.map((skill, index) => (
-              <Tool
-                key={index}
-                skills={skills}
-                skill={skill}
-                index={index}
-              />
+              <Tool key={index} skills={skills} skill={skill} index={index} />
             ))}
           </div>
         </div>

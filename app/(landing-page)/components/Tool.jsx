@@ -1,27 +1,12 @@
-import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
-const Tool = ({ skills, index, skill, containerRef }) => {
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [100 * index, -100 * (skills.length - index)]
-  );
-  const opacity = useTransform(
-    scrollYProgress,
-    [0.2 * index, 0.2 * (index + 1)],
-    [0, 1]
-  );
+const Tool = ({ index, skill }) => {
   return (
-    <motion.div
+    <div
       key={index}
-      //   style={{ y, opacity }}
-      className=" p-10 bg-white rounded-lg shadow-xl w-full"
+      className="p-10 bg-white rounded-lg shadow w-full sticky top-36"
     >
       <div className="flex items-start justify-start gap-5">
         <div>
@@ -35,7 +20,9 @@ const Tool = ({ skills, index, skill, containerRef }) => {
         </div>
         <div className="flex-grow">
           <h3 className="text-[22px] font-semibold">{skill.name}</h3>
-          <p className="text-[17px] text-foreground/40 font-semibold">{skill.description}</p>
+          <p className="text-[17px] text-foreground/40 font-semibold">
+            {skill.description}
+          </p>
           <div className="w-full h-[6px] bg-gray-200 rounded-full mt-6 relative">
             <motion.div
               initial={{ width: "0%" }}
@@ -49,7 +36,7 @@ const Tool = ({ skills, index, skill, containerRef }) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
