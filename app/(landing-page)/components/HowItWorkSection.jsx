@@ -134,14 +134,24 @@ const HowItWorkSection = () => {
                 </div>
               </div>
               <div className="col-span-3">
-                <h4 className="text-2xl font-semibold mb-5 mt-1">{item.title}</h4>
-                <ul  className="space-y-2">
+                <h4 className="text-2xl font-semibold mb-5 mt-1">
+                  {item.title}
+                </h4>
+                <ul className="space-y-2">
                   {item.steps.map((step, index) => (
                     <li key={index}>
                       <div className="flex items-start gap-2">
-                        <Asterisk className="text-highlight" />
+                        <span>
+                          <Asterisk className="text-highlight size-8" />
+                        </span>
                         <div className="flex flex-col lg:flex-row lg:gap-2 text-[17px]">
-                          <p><span className=" font-semibold inline">{step.label}</span> — <span className="text-white/80">{step.value}</span></p>
+                          <p>
+                            <span className=" font-semibold inline">
+                              {step.label}
+                            </span>{" "}
+                            —{" "}
+                            <span className="text-white/80">{step.value}</span>
+                          </p>
                         </div>
                       </div>
                     </li>
