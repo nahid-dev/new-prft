@@ -5,6 +5,8 @@ import ToolBox from "./(landing-page)/components/Toolbox";
 import HowItWorkSection from "./(landing-page)/components/HowItWorkSection";
 import StatisticSection from "./(landing-page)/components/StatisticSection";
 import Testimonial from "./(landing-page)/components/Testimonial";
+import FAQSection from "./(landing-page)/components/FAQSection";
+import ContactSection from "./(landing-page)/components/ContactSection";
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
       <HowItWorkSection />
       <StatisticSection />
       <Testimonial />
+      <FAQSection />
+      <ContactSection />
     </div>
   );
 }
