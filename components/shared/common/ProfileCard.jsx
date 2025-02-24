@@ -1,9 +1,10 @@
+import { cn } from "@/lib/utils";
 import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProfileCard = () => {
+const ProfileCard = ({ nameStyle }) => {
   const socialIconList = [
     {
       logo: "/logo/linkedin.png",
@@ -26,7 +27,7 @@ const ProfileCard = () => {
             style={{
               borderRadius: "45px",
             }}
-            className="bg-[#284056] h-[70px] w-[70px]"
+            className="bg-[#284056] size-[70px] xl:size-[90px]"
           ></div>
         </div>
         <div className="w-[20px] overflow-hidden">
@@ -34,7 +35,7 @@ const ProfileCard = () => {
             style={{
               borderRadius: "45px",
             }}
-            className="bg-[#284056] h-[70px] w-[70px]"
+            className="bg-[#284056] size-[70px] xl:size-[90px]"
           ></div>
         </div>
         <div className="w-[27px] overflow-hidden">
@@ -42,7 +43,7 @@ const ProfileCard = () => {
             style={{
               borderRadius: "45px",
             }}
-            className="bg-[#284056] h-[70px] w-[70px]"
+            className="bg-[#284056] size-[70px] xl:size-[90px]"
           ></div>
         </div>
 
@@ -52,12 +53,14 @@ const ProfileCard = () => {
           width={300}
           height={300}
           loading="lazy"
-          className="size-[70px] rounded-full object-cover"
+          className="size-[70px] xl:size-[90px] rounded-full object-cover"
         />
       </div>
       <div className="flex flex-col gap-3">
         <div>
-          <h4 className="text-xl font-semibold">Md Abdul Khalek</h4>
+          <h4 className={cn("text-xl font-semibold", nameStyle)}>
+            Md Abdul Khalek
+          </h4>
           <p className="text-[15px] font-medium text-gray-400">
             Software Developer - Frontend
           </p>

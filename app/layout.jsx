@@ -1,5 +1,6 @@
 import Navbar from "@/components/shared/Navbar";
 import "./globals.css";
+import Footer from "@/components/shared/Footer";
 
 export const metadata = {
   title: "Portfolio-Khalek",
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body className="bg-gray-50">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

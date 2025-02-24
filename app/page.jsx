@@ -10,7 +10,7 @@ import ContactSection from "./(landing-page)/components/ContactSection";
 
 export default function Home() {
   return (
-    <div className="py-20">
+    <div>
       <HeroSection />
       <InfinityMovingSection />
       <ProjectSection />
@@ -21,6 +21,7 @@ export default function Home() {
       <Testimonial />
       <FAQSection />
       <ContactSection />
+      <InfinityMovingSection />
     </div>
   );
 }
