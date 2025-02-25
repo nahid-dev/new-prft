@@ -1,7 +1,7 @@
 "use client";
 import { CodeXml } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./common/Button";
 import { motion } from "framer-motion";
 
@@ -21,9 +21,36 @@ const menuVariant2 = {
 
 const Navbar = () => {
   const [isMenuToggle, setIsMenuToggle] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Handle scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 99 && currentScrollY > lastScrollY) {
+        setHidden(true); // Hide when scrolling down past 99px
+      } else {
+        setHidden(false); // Show when scrolling up
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <nav className="bg-transparent border-b fixed w-full top-0 z-50">
+    <motion.nav
+      initial={{ y: "-100%", opacity: 0 }}
+      animate={{ y: hidden ? "-100%" : "0%", opacity: 1 }}
+      transition={{ duration: 0.2, ease: "easeOut", delay: 0.2 }}
+      className={`fixed w-full top-0 z-50 ${
+        lastScrollY > 99 ? "bg-white" : "bg-transparent"
+      }`}
+    >
       {/* TOP NAVBAR */}
       <div className="px-6 md:px-10 py-4 md:py-8 flex items-center justify-between bg-white md:bg-transparent">
         {/* LEFT PART (LOGO) */}
@@ -116,7 +143,7 @@ const Navbar = () => {
           </div>
         </div>
       </motion.div>
-    </nav>
+    </motion.nav>
   );
 };
 

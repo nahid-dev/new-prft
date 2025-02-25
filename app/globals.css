@@ -8,6 +8,9 @@
     --highlight-color: #8cff2e;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Manrope", serif;
     scroll-behavior: smooth;

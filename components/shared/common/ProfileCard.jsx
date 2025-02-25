@@ -1,7 +1,8 @@
+"use client";
 import { cn } from "@/lib/utils";
-import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import React from "react";
 
 const ProfileCard = ({ nameStyle }) => {
@@ -19,34 +20,46 @@ const ProfileCard = ({ nameStyle }) => {
       href: "https://github.com/nahid-dev",
     },
   ];
-  return (
-    <div className="flex items-center gap-6">
-      <div className="flex items-center">
-        <div className="w-[11px] overflow-hidden">
-          <div
-            style={{
-              borderRadius: "45px",
-            }}
-            className="bg-[#284056] size-[70px] xl:size-[90px]"
-          ></div>
-        </div>
-        <div className="w-[20px] overflow-hidden">
-          <div
-            style={{
-              borderRadius: "45px",
-            }}
-            className="bg-[#284056] size-[70px] xl:size-[90px]"
-          ></div>
-        </div>
-        <div className="w-[27px] overflow-hidden">
-          <div
-            style={{
-              borderRadius: "45px",
-            }}
-            className="bg-[#284056] size-[70px] xl:size-[90px]"
-          ></div>
-        </div>
 
+  const supportElements = [11, 20, 27].reverse();
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      className="flex items-center gap-6"
+    >
+      <div className="flex items-center">
+        {/* SUPPORT ELEMENTS */}
+        {[11, 20, 27].map((width, index) => (
+          <motion.div
+            key={index}
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 0.4,
+              delay: (supportElements.length - index - 1) * 0.2,
+              ease: "easeOut",
+            }}
+            className={`${
+              width === 11
+                ? "w-[11px]"
+                : width === 20
+                ? "w-[20px]"
+                : width === 27
+                ? "w-[27px]"
+                : ""
+            } overflow-hidden`}
+          >
+            <div
+              style={{ borderRadius: "45px" }}
+              className="bg-[#284056] size-[70px] xl:size-[90px]"
+            ></div>
+          </motion.div>
+        ))}
+
+        {/* PROFILE IMAGE */}
         <Image
           src="/images/me.png"
           alt="Person Image"
@@ -56,7 +69,14 @@ const ProfileCard = ({ nameStyle }) => {
           className="size-[70px] xl:size-[90px] rounded-full object-cover"
         />
       </div>
-      <div className="flex flex-col gap-3">
+
+      {/* NAME AND ROLE */}
+      <motion.div
+        initial={{ x: 50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="flex flex-col gap-3"
+      >
         <div>
           <h4 className={cn("text-xl font-semibold", nameStyle)}>
             Md Abdul Khalek
@@ -65,9 +85,15 @@ const ProfileCard = ({ nameStyle }) => {
             Software Developer - Frontend
           </p>
         </div>
-        {/* SOCIAL ICON */}
-        <div className="flex items-center gap-3">
-          {socialIconList?.map((item, index) => (
+
+        {/* SOCIAL ICONS */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex items-center gap-3"
+        >
+          {socialIconList.map((item, index) => (
             <Link
               target="_blank"
               href={item.href}
@@ -84,9 +110,9 @@ const ProfileCard = ({ nameStyle }) => {
               />
             </Link>
           ))}
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

@@ -18,9 +18,9 @@ const HeroSection = () => {
     <div className="py-20 relative">
       <BackgroundBeams className="absolute inset-0 z-0" />
       <Container>
-        <div className="grid grid-cols-3 relative z-10">
+        <div className="grid grid-cols-3 relative z-10 mt-10">
           {/* LEFT SIDE - PROFILE SECTION */}
-          <div className="col-span-3 lg:col-span-1 pt-10">
+          <div className="col-span-3 lg:col-span-1 pt-32">
             <ProfileCard />
           </div>
           {/* RIGHT SIDE - HERO HEADING SECTION */}

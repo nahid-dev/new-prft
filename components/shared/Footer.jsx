@@ -49,7 +49,7 @@ const Footer = () => {
             <div>
               <h2 className="text-[40px] xl:text-[70px] leading-none text-white">
                 Looking for a skilled developer? Let&apos;s build something
-                amazing together.
+                amazing together<span className="text-highlight">.</span>
               </h2>
             </div>
             <div className="xl:ml-24 flex flex-col gap-10 items-center xl:items-start">
