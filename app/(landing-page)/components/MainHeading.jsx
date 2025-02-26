@@ -1,20 +1,25 @@
 import HeadingButton from "@/components/shared/common/HeadingButton";
 import React from "react";
-
-const DEFAULT_STYLE = "text";
+import { motion } from "framer-motion";
 
 const MainHeading = () => {
   return (
-    <h1 className="leading-tight text-[79px]">
+    <h1 className="leading-tight text-[51px] lg:text-[79px]">
       <div className="flex items-center gap-4">
-        <p>Hi! I&apos;m</p>
+        <motion.p
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+        >
+          Hi! I&apos;m
+        </motion.p>
         <HeadingButton className="bg-white text-foreground">
           Abdul Khalek
         </HeadingButton>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 flex-wrap">
         <p>a</p>
-        <HeadingButton className="bg-foreground text-white shadow-none">
+        <HeadingButton className="bg-foreground text-white shadow-none ">
           Software Developer
         </HeadingButton>
         <p>from</p>
@@ -22,9 +27,13 @@ const MainHeading = () => {
           Dhaka
         </HeadingButton>
       </div>
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <p>building scalable and high-performance applications</p>
-      </div>
+      </motion.div>
     </h1>
   );
 };

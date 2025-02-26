@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Button from "./common/Button";
 import { motion } from "framer-motion";
+import Container from "./Container";
 
 const navItems = [
   { id: 1, name: "Projects", href: "/projects" },
@@ -52,7 +53,7 @@ const Navbar = () => {
       }`}
     >
       {/* TOP NAVBAR */}
-      <div className="px-6 md:px-10 py-4 md:py-8 flex items-center justify-between bg-white md:bg-transparent">
+      <div className="py-4 lg:container mx-auto px-2 sm:px-3 md:py-8 flex items-center justify-between bg-white md:bg-transparent">
         {/* LEFT PART (LOGO) */}
         <div className="flex items-center gap-3">
           <CodeXml strokeWidth={3} color="#91ff2e" className="size-8" />
