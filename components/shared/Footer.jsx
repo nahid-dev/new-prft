@@ -60,10 +60,10 @@ const Footer = () => {
                   Contact me
                 </p>
                 <div className="space-y-5">
-                  <p className="text-white text-[40px] font-semibold">
+                  <p className="text-white text-3xl md:text-[40px] font-semibold text-center md:text-left">
                     khalek.2md<span className="text-highlight">@</span>gmail.com
                   </p>
-                  <p className="text-gray-400 text-[22px] font-semibold">
+                  <p className="text-gray-400 text-lg md:text-[22px] font-semibold text-center md:text-left">
                     Looking for a skilled{" "}
                     <span className="text-white">frontend developer</span> who
                     builds <span className="text-white">high-performance,</span>{" "}
@@ -75,6 +75,7 @@ const Footer = () => {
                 <HighlightButton
                   onClick={handleOpenResumeModal}
                   isGlowing={true}
+                  animationType="fadeInMax"
                 >
                   View my resume
                 </HighlightButton>

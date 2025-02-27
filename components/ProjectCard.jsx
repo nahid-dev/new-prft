@@ -11,15 +11,26 @@ const ProjectCard = ({ project, cardTopClasses }) => {
       }`}
       style={{
         border: "1px solid #4444",
-        borderRight: project.id === 1 || project.id === 4 ? "0" : "1px solid #4444",
-        borderLeft: project.id === 4 ? "0" : "1px solid #4444"
+        borderRight:
+          project.id === 1 || project.id === 4 ? "0" : "1px solid #4444",
+        borderLeft: project.id === 4 ? "0" : "1px solid #4444",
       }}
     >
       {/* CARD TOP */}
       <div className={cn("flex flex-col gap-4 pl-12 pb-12", cardTopClasses)}>
-        <p className="text-[17px] font-semibold"><span className="text-highlight" dangerouslySetInnerHTML={{ __html: '{' }}></span> {project.tag} <span className="text-highlight" dangerouslySetInnerHTML={{ __html: '}' }}></span></p>
+        <p className="text-[17px] font-semibold">
+          <span
+            className="text-highlight"
+            dangerouslySetInnerHTML={{ __html: "{" }}
+          ></span>{" "}
+          {project.tag}{" "}
+          <span
+            className="text-highlight"
+            dangerouslySetInnerHTML={{ __html: "}" }}
+          ></span>
+        </p>
         <h4 className="text-3xl">{project.name}</h4>
-        <p className="text-gray-500 text-[15px] font-semibold flex items-center gap-2">
+        <p className="text-gray-500 text-[15px] font-semibold flex items-center gap-2 flex-wrap">
           {project.technology.map((tech, index) => (
             <span key={index}>{tech}</span>
           ))}
