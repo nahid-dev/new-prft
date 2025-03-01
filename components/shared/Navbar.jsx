@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Button from "./common/Button";
 import { motion } from "framer-motion";
-import Container from "./Container";
 
 const navItems = [
   { id: 1, name: "Projects", href: "/projects" },

@@ -1,9 +1,9 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ProfileCard from "@/components/shared/common/ProfileCard";
 import SubTag from "@/components/shared/common/SubTag";
 import Container from "@/components/shared/Container";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import MainHeading from "./MainHeading";
 import HighlightButton from "@/components/shared/common/HighlightButton";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -11,16 +11,26 @@ import Modal from "@/components/modal/Modal";
 import ResumeViewModal from "@/components/ResumeViewModal";
 
 const HeroSection = () => {
+  const ref = useRef();
   const [isOpenResumeModal, setIsOpenResumeModal] = useState(false);
   const handleOpenResumeModal = () => {
     setIsOpenResumeModal((prev) => !prev);
   };
 
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const slowScroll = useTransform(scrollYProgress, [0, 1], ["0px", "-200px"]);
+
   return (
-    <div className="py-20 relative">
+    <div ref={ref} className="py-20 relative">
       <BackgroundBeams className="absolute inset-0 z-0" />
       <Container>
-        <div className="grid grid-cols-3 relative z-10 mt-10 gap-10 lg:gap-0">
+        <motion.div
+          style={{ y: slowScroll }}
+          className="grid grid-cols-3 relative z-10 mt-10 gap-10 lg:gap-0"
+        >
           {/* LEFT SIDE - PROFILE SECTION */}
           <div className="col-span-3 xl:col-span-1 pt-10 lg:pt-20 xl:pt-32">
             <ProfileCard />
@@ -61,7 +71,7 @@ const HeroSection = () => {
               </HighlightButton>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Container>
 
       {/* RESUME MODAL */}
