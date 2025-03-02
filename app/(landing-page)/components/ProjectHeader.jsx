@@ -11,11 +11,13 @@ const ProjectHeader = () => {
         <div>
           <SectionHeaderTag title="{01} - Featured Projects" />
           <div className="space-y-10">
-            <h2 className="text-[50px] w-1/2 leading-tight">
+            <h2 className="text-[40px] lg:text-[50px] w-3/2 lg:1/2 leading-tight">
               I craft seamless digital experiences with problem-solving and tech
               expertise.
             </h2>
-            <HighlightButton isGlowing={true}>About more</HighlightButton>
+            <HighlightButton isGlowing={true} animationType="fadeUpLow">
+              About more
+            </HighlightButton>
           </div>
         </div>
       </div>

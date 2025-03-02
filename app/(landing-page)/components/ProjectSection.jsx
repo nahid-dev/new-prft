@@ -63,7 +63,11 @@ const ProjectSection = () => {
       {/* SECTION BODY */}
       <div className="grid grid-cols-1 xl:grid-cols-2">
         {projects.slice(0, 2).map((project) => (
-          <ProjectCard project={project} key={project.id} />
+          <ProjectCard
+            project={project}
+            key={project.id}
+            cardTopClasses="pl-0 lg:pl-12 pb-8 lg:pb-12"
+          />
         ))}
       </div>
       <div className="grid grid-cols-1 xl:grid-cols-3">
@@ -71,7 +75,7 @@ const ProjectSection = () => {
           <ProjectCard
             project={project}
             key={project.id}
-            cardTopClasses="pl-10 pb-[50px]"
+            cardTopClasses="pl-0 lg:pl-10 pb-8 lg:pb-[50px]"
           />
         ))}
         <motion.div
@@ -80,16 +84,16 @@ const ProjectSection = () => {
             borderRadius: 0,
           }}
           transition={{ duration: 0.3 }}
-          className="p-5 group cursor-pointer"
+          className="p-5 group cursor-pointer h-[300px] xl:h-full"
         >
           <motion.div
             whileHover={{
               borderRadius: 0,
             }}
             transition={{ duration: 0.3 }}
-            className="bg-highlight text-gray-800 font-semibold text-xl  h-full flex items-center justify-center rounded-xl"
+            className="bg-highlight text-gray-800 font-semibold text-xl h-full flex items-center justify-center rounded-xl"
           >
-            <motion.div className="flex items-center gap-4 group-hover:gap-2 transition-all duration-100">
+            <motion.div className="flex items-center gap-4 group-hover:gap-2 transition-all duration-100 ">
               <p>View all projects</p>
               <p className="bg-foreground text-white p-2 rounded-full">
                 <ArrowUp className="rotate-45 size-6 group-hover:rotate-90 transition duration-300" />

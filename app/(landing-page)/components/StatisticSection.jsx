@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Container from "@/components/shared/Container";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -21,8 +23,8 @@ const statistics = [
     length: 10,
     theme: {
       background: "dark-gray",
-        icon: "/custom-svg/triangle.svg",
-        border: true,
+      icon: "/custom-svg/triangle.svg",
+      border: true,
     },
   },
   {
@@ -37,25 +39,30 @@ const statistics = [
   },
 ];
 
-// const dynamicBG = (prop) => {
-//     let bg;
-//     if(prop)
-// }
-
 const themes = {
-    highlight: "bg-highlight",
-    "dark-gray": "bg-[#1a1a1a] text-white",
-    lighter: "bg-white"
-}
+  highlight: "bg-highlight",
+  "dark-gray": "bg-[#1a1a1a] text-white",
+  lighter: "bg-white",
+};
 
 const StatisticSection = () => {
-    
   return (
     <div className="bg-dark py-20">
       <Container>
         <div className="grid grid-cols-3 gap-5">
-          {statistics.map((item) => (
-            <div
+          {statistics.map((item, index) => (
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: index === 0 ? 20 : index === 1 ? 10 : 40,
+              }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: index === 2 ? 0.4 : index === 1 ? 0 : 0.2,
+              }}
               key={item.id}
               className={`col-span-3 md:col-span-1 rounded-2xl p-6 md:p-8 xl:p-[50px] relative overflow-hidden ${
                 themes[item.theme.background]
@@ -85,7 +92,7 @@ const StatisticSection = () => {
                 alt="Statistics svg"
                 className="size-[278px] top-16 xl:top-24 absolute z-10 "
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </Container>

@@ -15,6 +15,8 @@ const HeadingButton = ({ children, className, animationType = "default" }) => {
       initial={fadeVariants[animationType]}
       animate={{ opacity: 1, x: 0, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
       className={clsx(
         "px-[22px] py-[14px] rounded-full text-[22px] lg:text-[34px] shadow-md font-semibold text-nowrap",
         className

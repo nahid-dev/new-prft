@@ -26,7 +26,8 @@ const ProfileCard = ({ nameStyle }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
       className="flex items-center gap-6"
     >
@@ -36,7 +37,8 @@ const ProfileCard = ({ nameStyle }) => {
           <motion.div
             key={index}
             initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{
               duration: 0.4,
               delay: (supportElements.length - index - 1) * 0.2,
@@ -73,7 +75,8 @@ const ProfileCard = ({ nameStyle }) => {
       {/* NAME AND ROLE */}
       <motion.div
         initial={{ x: 50, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="flex flex-col gap-3"
       >

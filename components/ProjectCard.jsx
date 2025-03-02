@@ -6,7 +6,7 @@ const ProjectCard = ({ project, cardTopClasses }) => {
   return (
     <div
       key={project.id}
-      className={`cursor-pointer p-5 pt-16 hover:bg-[#1A1A1A] transition-all duration-300 ${
+      className={`cursor-pointer p-5 pt-8 lg:pt-16 hover:bg-[#1A1A1A] transition-all duration-300 ${
         project.id === 1 ? "border-r-0" : ""
       }`}
       style={{
@@ -37,12 +37,13 @@ const ProjectCard = ({ project, cardTopClasses }) => {
         </p>
       </div>
       {/* CARD BOTTOM */}
-      <div>
+      <div className="appear">
         <Image
           src={project.image}
           width={1080}
           height={1080}
           alt="Project Image"
+          loading="lazy"
           className="object-fill w-full rounded-xl "
         />
       </div>

@@ -8,7 +8,9 @@ const SectionHeaderTag = ({title, className}) => {
           className="bg-highlight rounded-full size-[10px]"
           style={{ boxShadow: "0 2px 13px #82ff1f80" }}
         />
-        <p className="text-lg font-semibold text-gray-400">{title}</p>
+        <p className="text-[13px] md:text-lg font-semibold text-gray-400">
+          {title}
+        </p>
       </div>
     );
 };

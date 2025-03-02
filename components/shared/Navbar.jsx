@@ -64,9 +64,17 @@ const Navbar = () => {
         {/* MIDDLE (MENU ITEMS - Desktop) */}
         <ul className="items-center gap-3 hidden md:flex">
           {navItems.map((nav) => (
-            <li key={nav.id}>
-              <Link className="text-[17px] font-semibold" href={nav.href}>
-                {nav.name}
+            <li key={nav.id} className="overflow-hidden">
+              <Link
+                className="text-[17px] font-semibold group "
+                href={nav.href}
+              >
+                <p className="translate-y-3 group-hover:-translate-y-6 transition-all duration-300 leading-tight">
+                  {nav.name}
+                </p>
+                <p className="translate-y-6 group-hover:-translate-y-3 transition-all duration-300 leading-tight">
+                  {nav.name}
+                </p>
               </Link>
             </li>
           ))}
@@ -137,7 +145,7 @@ const Navbar = () => {
               <span className="text-gray-500  lg:inline">Email: </span>
               <span>khalek.2md@gmail.com</span>
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-5">
               <Button className="text-nowrap w-fit">Contact me</Button>
             </div>
           </div>

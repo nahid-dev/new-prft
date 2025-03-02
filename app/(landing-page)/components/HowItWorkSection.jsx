@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import SectionHeaderTag from "@/components/SectionHeaderTag";
 import Container from "@/components/shared/Container";
 import { Asterisk } from "lucide-react";
@@ -113,28 +115,41 @@ const HowItWorkSection = () => {
   return (
     <div className="bg-dark text-white">
       <Container>
-        <div className="py-20 border-b">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+          className="py-12 lg:py-20 border-b"
+        >
           <SectionHeaderTag title="{03} — Process" />
-          <h2 className="text-[50px] xl:text-[90px] leading-tight">
+          <h2 className="text-[40px] lg:text-[50px] xl:text-[90px] leading-tight">
             My Development Workflow
           </h2>
-        </div>
+        </motion.div>
         <div className="divide-y">
           {data.map((item, index) => (
-            <div key={item.id} className="py-12 grid grid-cols-4 md:gap-5">
-              <div className="col-span-1 flex justify-between">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+              key={item.id}
+              className="py-12 grid grid-cols-4 md:gap-5"
+            >
+              <div className="col-span-4 md:col-span-1 flex flex-col gap-5 md:flex-row justify-between">
                 <div>
                   <span className="rounded-full border text-[15px] py-2 px-5 inline">
                     {item.category}
                   </span>
                 </div>
-                <div className="text-4xl font-semibold">
+                <div className="text-3xl md:text-4xl font-semibold">
                   <span className="text-highlight">/</span>
                   <span>0{index + 1}</span>
                 </div>
               </div>
-              <div className="col-span-3">
-                <h4 className="text-2xl font-semibold mb-5 mt-1">
+              <div className="col-span-4 md:col-span-3">
+                <h4 className="text-[22px] md:text-2xl font-semibold mb-5 mt-1">
                   {item.title}
                 </h4>
                 <ul className="space-y-2">
@@ -158,7 +173,7 @@ const HowItWorkSection = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Container>
