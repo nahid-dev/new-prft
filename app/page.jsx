@@ -21,7 +21,6 @@ export default function Home() {
       <Testimonial />
       <FAQSection />
       <ContactSection />
-      <InfinityMovingSection />
     </div>
   );
 }

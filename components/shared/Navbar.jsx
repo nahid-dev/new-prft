@@ -54,12 +54,12 @@ const Navbar = () => {
       {/* TOP NAVBAR */}
       <div className="py-4 lg:container mx-auto px-2 sm:px-3 md:py-8 flex items-center justify-between bg-white md:bg-transparent">
         {/* LEFT PART (LOGO) */}
-        <div className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <CodeXml strokeWidth={3} color="#91ff2e" className="size-8" />
           <p className="flex items-center gap-1 text-xl lg:text-2xl">
             <span className="font-bold">Abdul</span> <span>Khalek</span>
           </p>
-        </div>
+        </Link>
 
         {/* MIDDLE (MENU ITEMS - Desktop) */}
         <ul className="items-center gap-3 hidden md:flex">
