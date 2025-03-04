@@ -9,7 +9,7 @@ const Button = ({
   ...props
 }) => {
   const baseStyles =
-    "rounded-full text-white bg-foreground font-semibold transition-all duration-300 hover:bg-highlight hover:text-foreground";
+    "rounded-full text-white bg-foreground text-nowrap font-semibold transition-all duration-300 hover:bg-highlight hover:text-foreground";
 
   const variantStyles = {
     primary: "bg-blue-500 text-white hover:bg-blue-600",
