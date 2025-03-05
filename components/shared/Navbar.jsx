@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const navItems = [
   { id: 1, name: "Projects", href: "/projects" },
-  { id: 2, name: "About & Contact", href: "/about_&_contact" },
+  { id: 2, name: "About & Contact", href: "/about-and-contact" },
 ];
 
 const menuVariant = {
@@ -54,7 +54,11 @@ const Navbar = () => {
       {/* TOP NAVBAR */}
       <div className="py-4 lg:container mx-auto px-2 sm:px-3 md:py-8 flex items-center justify-between bg-white md:bg-transparent">
         {/* LEFT PART (LOGO) */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link
+          onClick={() => setIsMenuToggle(false)}
+          href="/"
+          className="flex items-center gap-3"
+        >
           <CodeXml strokeWidth={3} color="#91ff2e" className="size-8" />
           <p className="flex items-center gap-1 text-xl lg:text-2xl">
             <span className="font-bold">Abdul</span> <span>Khalek</span>
@@ -133,7 +137,7 @@ const Navbar = () => {
         <div className="flex flex-col md:hidden gap-5 pt-10 pb-5">
           <ul className="flex flex-col items-center gap-3">
             {navItems.map((nav) => (
-              <li key={nav.id}>
+              <li onClick={() => setIsMenuToggle(false)} key={nav.id}>
                 <Link className="text-[17px] font-semibold" href={nav.href}>
                   {nav.name}
                 </Link>
@@ -141,12 +145,20 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="flex flex-col justify-center gap-3">
-            <p className="text-[15px] font-semibold flex flex-col items-center">
+            <p
+              onClick={() => setIsMenuToggle(false)}
+              className="text-[15px] font-semibold flex flex-col items-center"
+            >
               <span className="text-gray-500  lg:inline">Email: </span>
               <span>khalek.2md@gmail.com</span>
             </p>
             <div className="flex justify-center mt-5">
-              <Button className="text-nowrap w-fit">Contact me</Button>
+              <Link
+                onClick={() => setIsMenuToggle(false)}
+                href="/about-and-contact"
+              >
+                <Button className="text-nowrap w-fit">Contact me</Button>
+              </Link>
             </div>
           </div>
         </div>
