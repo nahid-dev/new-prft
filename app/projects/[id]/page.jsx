@@ -6,10 +6,9 @@ import Container from "@/components/shared/Container";
 import { Asterisk } from "lucide-react";
 import HighlightButton from "@/components/shared/common/HighlightButton";
 import Image from "next/image";
-import Button from "@/components/shared/common/Button";
 import Link from "next/link";
 import SectionHeaderTag from "@/components/SectionHeaderTag";
-import ProjectCard from "@/components/ProjectCard";
+import RelatedProjectCard from "./components/RelatedProjectCard";
 const ProjectDetails = ({ params }) => {
   const data = projectDetails.find(
     (project) => project.id === Number(params.id)
@@ -149,14 +148,19 @@ const ProjectDetails = ({ params }) => {
               Some of my other stuff
             </h2>
           </motion.div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 border rounded-md">
+          <div
+            className="grid grid-cols-1 lg:grid-cols-3 rounded-2xl"
+            style={{ border: "1px solid #4444" }}
+          >
             {projects
               .filter((item) => item.id !== Number(params.id))
-              .map((project) => (
-                <ProjectCard
+              .map((project, index) => (
+                <RelatedProjectCard
                   project={project}
                   key={project.id}
                   cardTopClasses="pl-0 lg:pl-10 pb-8 lg:pb-[50px]"
+                  isAnimated={false}
+                  index={index}
                 />
               ))}
           </div>

@@ -90,7 +90,9 @@ const Navbar = () => {
             <span className="text-gray-500 hidden lg:inline">Email: </span>
             <span>khalek.2md@gmail.com</span>
           </p>
-          <Button className="text-nowrap">Contact me</Button>
+          <Link href="/about-and-contact">
+            <Button className="text-nowrap">Contact me</Button>
+          </Link>
         </div>
 
         {/* MOBILE MENU ICON */}

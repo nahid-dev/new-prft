@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 import ProjectHeader from "./ProjectHeader";
 import Container from "@/components/shared/Container";
@@ -8,9 +9,8 @@ import ProjectCard from "@/components/ProjectCard";
 import { ArrowUp } from "lucide-react";
 import { projects } from "@/lib/options";
 
-
-
 const ProjectSection = () => {
+  const router = useRouter();
   const { scrollYProgress } = useScroll();
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 90]);
 
@@ -62,6 +62,7 @@ const ProjectSection = () => {
             whileHover={{
               borderRadius: 0,
             }}
+            onClick={() => router.push("/projects")}
             transition={{ duration: 0.3 }}
             className="bg-highlight text-gray-800 font-semibold text-xl h-full flex items-center justify-center rounded-xl"
           >

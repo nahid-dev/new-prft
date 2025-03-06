@@ -3,19 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProjectCard = ({ project, cardTopClasses }) => {
+const RelatedProjectCard = ({ project, cardTopClasses, index }) => {
   return (
-    <Link
-      href={`/projects/${project.id}`}
+      <Link
+          href={`/projects/${project.id}`}
       key={project.id}
-      className={`cursor-pointer p-5 pt-8 lg:pt-16 hover:bg-[#1A1A1A] transition-all duration-300 ${
-        project.id === 1 ? "border-r-0" : ""
-      }`}
+      className={`cursor-pointer p-5 pt-8 lg:pt-16 hover:bg-white transition-all duration-300 flex flex-col justify-between`}
       style={{
-        border: "1px solid #4444",
+        // border: "1px solid #4444",
         borderRight:
-          project.id === 1 || project.id === 4 ? "0" : "1px solid #4444",
-        borderLeft: project.id === 4 ? "0" : "1px solid #4444",
+          index === 0 ? "1px solid #4444" : 0,
+        borderLeft: index === 2 ? "1px solid #4444" : 0,
       }}
     >
       {/* CARD TOP */}
@@ -39,7 +37,7 @@ const ProjectCard = ({ project, cardTopClasses }) => {
         </p>
       </div>
       {/* CARD BOTTOM */}
-      <div className="appear">
+      <div>
         <Image
           src={project.image}
           width={1080}
@@ -53,4 +51,4 @@ const ProjectCard = ({ project, cardTopClasses }) => {
   );
 };
 
-export default ProjectCard;
+export default RelatedProjectCard;

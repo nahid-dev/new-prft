@@ -4,23 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
+import { socialIconList } from "@/lib/options";
 
 const ProfileCard = ({ nameStyle }) => {
-  const socialIconList = [
-    {
-      logo: "/logo/linkedin.png",
-      href: "https://www.linkedin.com/in/md-abdul-khalek-dev/",
-    },
-    {
-      logo: "/logo/facebook.png",
-      href: "https://www.facebook.com/profile.php?id=100007464525154",
-    },
-    {
-      logo: "/logo/github.png",
-      href: "https://github.com/nahid-dev",
-    },
-  ];
-
   const supportElements = [11, 20, 27].reverse();
 
   return (

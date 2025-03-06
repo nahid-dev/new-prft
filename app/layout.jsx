@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/shared/Footer";
 import ClientWrapper from "./(landing-page)/components/ClientWrapper";
 import InfinityMovingSection from "@/components/InfinityMovingSection";
+import Toast from "@/components/Toaster";
 
 export const metadata = {
   title: "Portfolio-Khalek",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-gray-50">
         <ClientWrapper>
+          <Toast />
           <Navbar />
           <div>{children}</div>
           <InfinityMovingSection />

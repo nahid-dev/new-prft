@@ -4,6 +4,7 @@ import SectionHeaderTag from "@/components/SectionHeaderTag";
 import Container from "@/components/shared/Container";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const contactData = [
   {
@@ -57,7 +58,9 @@ const ContactSection = () => {
           {/* CONTACT SECTION */}
           <div className="grid grid-col-1 md:grid-cols-3 gap-6 mt-10">
             {contactData.map((item) => (
-              <div
+              <Link
+                href={item.link}
+                target="_blank"
                 key={item.id}
                 className="bg-white p-8 rounded-xl shadow flex flex-col gap-10 group cursor-pointer border border-white hover:border-highlight transition-all duration-400"
               >
@@ -73,7 +76,7 @@ const ContactSection = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
 
             <div className="bg-highlight p-8 rounded-xl shadow flex flex-col gap-10 group cursor-pointer transition-all duration-400 group">

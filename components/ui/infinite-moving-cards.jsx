@@ -91,7 +91,7 @@ export const InfiniteMovingCards = ({
                 className="size-14"
               />
             </p>
-            <blockquote className="text-white font-semibold text-[22px]">
+            <blockquote className="text-white font-semibold text-[22px] line-clamp-4">
               {item.quote}
             </blockquote>
             <div className="flex items-center gap-3">
@@ -109,7 +109,7 @@ export const InfiniteMovingCards = ({
               <div>
                 <h4 className="text-lg text-white">{item.name}</h4>
                 <p className="text-gray-400 text-[15px]">
-                  <span>{item.role}</span> @ <span>{item.company}</span>
+                  <span>{item.role}</span>
                 </p>
                 <Link target="_blank" href={item.link} className="group">
                   <Image

@@ -9,7 +9,6 @@ const data = [
     name: "Shamim Bin Zahid",
     image: "/images/shamim.jpg",
     role: "Product Manager",
-    company: "REPLIQ Limited",
     link: "https://www.linkedin.com/in/shamemezahid/",
     quote:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odit voluptatum, laudantium nulla distinctio molestias?",
@@ -19,7 +18,6 @@ const data = [
     name: "Md Tanjil",
     image: "/images/tanjil.jpg",
     role: "Team Lead (Frontend)",
-    company: "REPLIQ Limited",
     link: "https://www.linkedin.com/in/iamtanjil/",
     quote:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odit voluptatum, laudantium nulla distinctio molestias?",
@@ -29,10 +27,18 @@ const data = [
     name: "Sanoth Debnath",
     image: "/images/sanoth.jpg",
     role: "Software Developer (Backend)",
-    company: "REPLIQ Limited",
     link: "https://www.linkedin.com/in/sanoth-debnath/",
     quote:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odit voluptatum, laudantium nulla distinctio molestias?",
+      "I had the pleasure of working with Md. Abdul Khalek for over a year on a recruitment management project. He expertly managed the frontend, kept up with the latest technologies, and handled client sprint updates professionally. A true team player, he consistently delivered high-quality work. I highly recommend him.",
+  },
+  {
+    id: 4,
+    name: "Joy Barman",
+    image: "/images/joy.jpg",
+    role: "Software Developer (Backend)",
+    link: "https://www.linkedin.com/in/joy-barman/",
+    quote:
+      "Md. Abdul Khalek is an exceptional frontend developer who played a crucial role in building the frontend of our recruitment management platform. His deep understanding of modern web technologies, ability to translate complex requirements into seamless user experiences, and commitment to delivering high-quality work made him a valuable asset to the team. He is proactive, detail-oriented, and always ready to tackle challenges with a positive attitude. I highly recommend him to anyone looking for a skilled and reliable frontend developer.",
   },
 ];
 export default function InfiniteMovingCardsSection() {
@@ -47,5 +53,3 @@ export default function InfiniteMovingCardsSection() {
     </div>
   );
 }
-
-
