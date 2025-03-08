@@ -15,14 +15,14 @@ const ProfileCard = ({ nameStyle }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className="flex items-center gap-6"
+      className="flex items-center gap-6 overflow-hidden"
     >
       <div className="flex items-center">
         {/* SUPPORT ELEMENTS */}
         {[11, 20, 27].map((width, index) => (
           <motion.div
             key={index}
-            initial={{ x: 50, opacity: 0 }}
+            initial={{ x: 30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{

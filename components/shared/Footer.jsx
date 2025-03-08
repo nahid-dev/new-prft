@@ -66,7 +66,7 @@ const Footer = () => {
             </motion.div>
 
             <div className="xl:ml-24 flex flex-col gap-10 items-center xl:items-start mt-5 md:mt-0">
-              {/* <ProfileCard nameStyle="text-white" /> */}
+              <ProfileCard nameStyle="text-white" />
               <div>
                 <p className="text-[15px] text-gray-400 font-semibold text-center md:text-left">
                   Contact me
