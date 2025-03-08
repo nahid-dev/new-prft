@@ -1,16 +1,16 @@
 import InfinityMovingSection from "@/components/InfinityMovingSection";
-import HeroSection from "./(landing-page)/components/HeroSection";
-import ProjectSection from "./(landing-page)/components/ProjectSection";
-import ToolBox from "./(landing-page)/components/Toolbox";
-import HowItWorkSection from "./(landing-page)/components/HowItWorkSection";
-import StatisticSection from "./(landing-page)/components/StatisticSection";
-import Testimonial from "./(landing-page)/components/Testimonial";
-import FAQSection from "./(landing-page)/components/FAQSection";
-import ContactSection from "./(landing-page)/components/ContactSection";
+import HeroSection from "./components/HeroSection";
+import ProjectSection from "./components/ProjectSection";
+import ToolBox from "./components/Toolbox";
+import HowItWorkSection from "./components/HowItWorkSection";
+import StatisticSection from "./components/StatisticSection";
+import Testimonial from "./components/Testimonial";
+import FAQSection from "./components/FAQSection";
+import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <HeroSection />
       <InfinityMovingSection />
       <ProjectSection />
@@ -21,6 +21,6 @@ export default function Home() {
       <Testimonial />
       <FAQSection />
       <ContactSection />
-    </div>
+    </>
   );
 }

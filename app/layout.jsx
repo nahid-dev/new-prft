@@ -1,7 +1,7 @@
 import Navbar from "@/components/shared/Navbar";
 import "./globals.css";
 import Footer from "@/components/shared/Footer";
-import ClientWrapper from "./(landing-page)/components/ClientWrapper";
+import ClientWrapper from "./components/ClientWrapper";
 import InfinityMovingSection from "@/components/InfinityMovingSection";
 import Toast from "@/components/Toaster";
 

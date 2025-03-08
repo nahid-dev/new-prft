@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Container from "./Container";
@@ -23,28 +23,32 @@ const Footer = () => {
   };
   return (
     <div className="bg-dark">
-      <Container>
-        <div className="flex items-center justify-between py-8">
-          <SubTag className="text-white text-[15px]" />
-          <div
-            onClick={handleGoToTopButton}
-            className="flex items-center gap-2 group cursor-pointer"
-          >
-            <div className="overflow-hidden">
-              <p className="text-gray-400 text-[15px] font-semibold p-1 translate-y-3 group-hover:-translate-y-6 transition-all duration-300 leading-tight">
-                Back to top
-              </p>
-              <p className="text-white text-[15px] font-semibold p-1 translate-y-6 group-hover:-translate-y-3 transition-all duration-300 leading-tight">
-                Back to top
-              </p>
-            </div>
-            <div className="bg-white inline-block rounded-full p-2.5">
-              <ArrowUp className="text-foreground" />
+      {/* FOOTER TOP SECTION */}
+      <div className="border-b">
+        <Container>
+          <div className="flex items-center justify-between py-8">
+            <SubTag className="text-white text-[15px]" />
+            <div
+              onClick={handleGoToTopButton}
+              className="flex items-center gap-2 group cursor-pointer"
+            >
+              <div className="overflow-hidden">
+                <p className="text-gray-400 text-[15px] font-semibold p-1 translate-y-3 group-hover:-translate-y-6 transition-all duration-300 leading-tight">
+                  Back to top
+                </p>
+                <p className="text-white text-[15px] font-semibold p-1 translate-y-6 group-hover:-translate-y-3 transition-all duration-300 leading-tight">
+                  Back to top
+                </p>
+              </div>
+              <div className="bg-white inline-block rounded-full p-2.5">
+                <ArrowUp className="text-foreground" />
+              </div>
             </div>
           </div>
-        </div>
-      </Container>
-      <div className="border py-20 md:py-40 xl:bg-[url('/custom-svg/footer.svg')] bg-no-repeat">
+        </Container>
+      </div>
+      {/* FOOTER BOTTOM SECTION */}
+      <div className="py-20 md:py-40 xl:bg-[url('/custom-svg/footer.svg')] bg-no-repeat ">
         <Container>
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
             <motion.div
@@ -54,7 +58,7 @@ const Footer = () => {
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
             >
               <div>
-                <h2 className="text-[40px] xl:text-[70px] leading-none text-white text-center md:text-left">
+                <h2 className="text-3xl md:text-[40px] xl:text-[70px] leading-none text-white text-center md:text-left">
                   Looking for a skilled developer? Let&apos;s build something
                   amazing together<span className="text-highlight">.</span>
                 </h2>
@@ -62,7 +66,7 @@ const Footer = () => {
             </motion.div>
 
             <div className="xl:ml-24 flex flex-col gap-10 items-center xl:items-start mt-5 md:mt-0">
-              <ProfileCard nameStyle="text-white" />
+              {/* <ProfileCard nameStyle="text-white" /> */}
               <div>
                 <p className="text-[15px] text-gray-400 font-semibold text-center md:text-left">
                   Contact me
@@ -98,7 +102,6 @@ const Footer = () => {
           </div>
         </Container>
       </div>
-
       {/* RESUME MODAL */}
       <Modal open={isOpenResumeModal} setOpen={setIsOpenResumeModal}>
         <ResumeViewModal setIsOpenResumeModal={setIsOpenResumeModal} />
